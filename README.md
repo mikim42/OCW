@@ -65,19 +65,19 @@ make
 	At least 2 players needed to start
 ```
 
-## Collaborators/Sponsors
-# Clubs
+### Collaborators/Sponsors
+## Clubs
 - DotSlash
 - Game Development Club
 - Ohlone Engineering Club
 - Ohlone College Society of Women Engineers
 
-# Professors
+## Professors
 - Suporn Chenhansa
 - David Topham
 - Ron Sha
 - Jim Pham
 - Irfan Malik
 
-## Author
+### Author
 * **Mingyun Kim** - [mikim42](https://github.com/mikim42)
