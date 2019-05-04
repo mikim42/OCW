@@ -52,8 +52,8 @@ During some extraterrestrial exploration, you found another earth like planet! D
 ### Function
 
 <p>
-<img align="left" src="./img/func-ex00.png">
-<img align="right" src="./img/func-ex01.png">
+<img src="./img/func-ex00.png">
+<img src="./img/func-ex01.png">
 </p>
 <img src="./img/func-ex02.png">
 <img src="./img/func-ex03.png">
