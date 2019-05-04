@@ -35,6 +35,7 @@ During some extraterrestrial exploration, you found another earth like planet! D
 
 ## Implementation
 ### Map
+
 <img align="right" src="./img/map-ex.png">
 
 1. Line 1 indicates how many turns will be in the game
@@ -50,8 +51,13 @@ During some extraterrestrial exploration, you found another earth like planet! D
 
 ### Function
 
+<img src="./img/func-ex00.png">
+<img src="./img/func-ex01.png">
+<img src="./img/func-ex02.png">
+<img src="./img/func-ex03.png">
+
 ## Installation
-**This program is developed on Linux/Unix-based OS.
+**This program is developed on Linux/Unix-based OS.<br>
 So, it may have errors on other OS.**
 
 1. Download the repository from Github:
