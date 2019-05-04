@@ -9,13 +9,8 @@ Ohlone Conqueror’s War is a game based on C++ where students’ program bots t
 * Providing an opportunity of experiences other than course materials
 
 ## Synopsis
-```
-During some extraterrestrial exploration, you found another earth like planet!
-Different countries are looking into capturing this new mineral rich land. You
-and your elite group members have been selected by the government to ensure that
-they get the most amount of land. Now, you, as the programmers will come up with
-an AI that ensures the most land occupation!
-```
+During some extraterrestrial exploration, you found another earth like planet! Different countries are looking into capturing this new mineral rich land. You and your elite group members have been selected by the government to ensure that they get the most amount of land. Now, you, as the programmers will come up with an AI that ensures the most land occupation!
+
 ## Rules
 ### General
 1. There can be 2 - 4 players in one game
