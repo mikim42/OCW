@@ -1,5 +1,7 @@
 # Ohlone Conqueror's War
+<p align="justify">
 Ohlone Conqueror’s War is a game based on C++ where students’ program bots to take a virtual field. In this game, they will take cells in a given 2D-array map, and who takes more cells wins.
+</p>
 
 ## Purpose
 * Learning the computer programming basics
@@ -28,7 +30,8 @@ During some extraterrestrial exploration, you found another earth like planet! D
 3. Bots cannot move outside the map or to obstacles.
 4. Bots cannot move to a same block as another bot.
 5. If any bots are not able to move, they will stay and skip the turn.
-6. If any bots take more than 2 seconds to make their decisions to move, they will stay and skip the turn (to do or not to do! Hamlet Syndrome).
+6. If any bots take more than 2 seconds to make their decisions to move,
+ they will stay and skip the turn (to do or not to do! Hamlet Syndrome).
 
 ## Implementation
 ### Map
