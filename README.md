@@ -51,7 +51,8 @@ During some extraterrestrial exploration, you found another earth like planet! D
 ### Function
 
 ## Installation
-**This program is developed on Linux/Unix-based OS. So, it may have errors on other OS.**
+**This program is developed on Linux/Unix-based OS.
+So, it may have errors on other OS.**
 
 1. Download the repository from Github:
 ```
