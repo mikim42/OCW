@@ -6,7 +6,7 @@
 /*   By: mikim <mikim@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 23:17:47 by mikim             #+#    #+#             */
-/*   Updated: 2019/04/19 22:56:30 by mikim            ###   ########.fr       */
+/*   Updated: 2019/05/10 07:26:22 by mikim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 OCW::OCW(void)
 {
 	_turn = 0;
+	_cturn = 0;
 	_pn = 0;
 	_ct = 0;
 	_moves[0] = "UP";
@@ -27,7 +28,7 @@ OCW::OCW(void)
 	_moves[2] = "LEFT";
 	_moves[3] = "RIGHT";
 	_moves[4] = "COLLISION";
-	_moves[5] = "TIME OUT";
+	_moves[5] = "TIME_OUT";
 }
 
 OCW::~OCW(void)
@@ -106,15 +107,43 @@ void	OCW::set(void)
 			}
 		}
 	}
+	/* *************************** GAME INFO ******************************** */
+	std::cout << std::endl << "Players: " << _pn << std::endl;
+	for (int i = 0; i < _pn; i++)
+		std::cout << "Player " << i + 1 << ": " << _player[i].name << std::endl;
+	std::cout << "Map: " << _width << " " << _height << std::endl << std::endl;
+	/* *************************** GAME INFO ******************************** */
+	/* ************************ BEFORE OPERATION **************************** */
+	std::cout << "Turn " << _cturn++ << std::endl;
+	for (int i = 0; i < _pn; i++)
+	{
+		std::cout << "Player " << i + 1 << " "
+		<< _player[i].name << std::endl;
+	}
+	/* ************************ BEFORE OPERATION **************************** */
+	/* *************************** PRINT MAP ******************************** */
+	for (size_t i = 0; i < _height; i++)
+		std::cout << _map[i] << std::endl;
+	/* *************************** PRINT MAP ******************************** */
+	/* ************************** PRINT MOVES ******************************* */
+	for (int i = 0; i < _pn; i++)
+	{
+		std::cout << "Player " << i + 1 << " Stand-By" << std::endl;
+	}
+	std::cout << std::endl;
+	/* ************************** PRINT MOVES ******************************* */
 }
 
 void	OCW::randomize(int r[])
 {
+	int i = 0;
+
 	srand(clock());
-	for (int i = 0; i < _ct;)
+	while (i < _ct - 1)
 	{
-		int		tmp = rand() % _ct + 1;
+		int		tmp = (rand() % _ct) + 1;
 		bool	check = false;
+
 		for (int j = 0; j < 4; j++)
 			if (r[j] == tmp)
 				check = true;
@@ -140,11 +169,16 @@ void	OCW::run(void)
 {
 	std::fill(_at, _at + _pn, 0);
 
+	std::cout << "Turn " << _cturn++ << std::endl;
 	for (int i = 0; i < _pn; i++)
 	{
 		Pthread		pt;
 		std::thread	th(ac_player, std::ref(_at[i]), std::ref(pt), i + 1);
 
+		/* ***********************BEFORE OPERATION*************************** */
+		std::cout << "Player " << i + 1 << " "
+		<< _player[i].name << std::endl;
+		/* ***********************BEFORE OPERATION*************************** */
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		while (!pt.done)
 		{
@@ -163,12 +197,6 @@ void	OCW::run(void)
 void	OCW::move(void)
 {
 	std::pair<int, int> m[_pn];
-
-	/* ************* DEBUG *************** */
-	for (int i = 0; i < _pn; i++)
-		std::cout << "Player[" << i + 1 << ", " << (char)('A' + i) <<
-			"](" << _player[i].name << "): " << _moves[_at[i] - 1] << std::endl;
-	/* ************* DEBUG *************** */
 
 	for (int i = 0; i < _pn; i++)
 	{
@@ -230,11 +258,10 @@ void	OCW::move(void)
 	for (size_t i = 0; i < _height; i++)
 		std::cout << _map[i] << std::endl;
 	/* ************** PRINT MAP ****************** */
-
 	/* ************** PRINT MOVES **************** */
 	for (int i = 0; i < _pn; i++)
-		std::cout << "Player[" << i + 1 << ", " << (char)('A' + i) <<
-			"](" << _player[i].name << "): " << _moves[_at[i] - 1] << std::endl;
+		std::cout << "Player " << i + 1 << " "
+		<< _moves[_at[i] - 1] << std::endl;
 	std::cout << std::endl;
 	/* ************** PRINT MOVES **************** */
 }

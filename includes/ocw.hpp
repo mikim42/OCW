@@ -6,7 +6,7 @@
 /*   By: mikim <mikim@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 23:16:25 by mikim             #+#    #+#             */
-/*   Updated: 2019/04/19 09:27:38 by mikim            ###   ########.fr       */
+/*   Updated: 2019/05/09 19:58:53 by mikim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ class	OCW
 
 	private:
 		int							_turn;
+		int							_cturn;
 		std::vector<std::string>	_map;
 		size_t						_width;
 		size_t						_height;
